@@ -7,11 +7,11 @@ routes.get('/taks',obtenerTaks);
 //obtener tareas por id
 routes.get('/taks/:id',obtenerID)
 //crear tareas
-routes.post('/taks/create',crearTaks);
+routes.post('/taks',crearTaks);
 //editar tareas
-routes.put('/taks/editar/:id',editarTaks);
+routes.put('/taks/:id',editarTaks);
 //eliminar tarea
-routes.delete('/taks/delet/:id',eliminarTaks)
+routes.delete('/taks/:id',eliminarTaks)
 
 
 
