@@ -1,4 +1,4 @@
-const {crearTaks,obtenerTaks,obtenerID,editarTaks}= require('../controllers/taks.controllers');
+const {crearTaks,obtenerTaks,obtenerID,editarTaks,eliminarTaks}= require('../controllers/taks.controllers');
 const routes = require('express').Router();
 
 
@@ -9,7 +9,9 @@ routes.get('/taks/:id',obtenerID)
 //crear tareas
 routes.post('/taks/create',crearTaks);
 //editar tareas
-routes.get('/taks/editar/:id',editarTaks);
+routes.put('/taks/editar/:id',editarTaks);
+//eliminar tarea
+routes.delete('/taks/delet/:id',eliminarTaks)
 
 
 
