@@ -8,6 +8,9 @@ const app = express();
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
+//configuracion de las rutas
+app.use(require('./routes/taks.routes'))
+
 //configuracion del puerto
 const PORT = 3440;
 
