@@ -1,6 +1,7 @@
-const {crearTaks,obtenerTaks,obtenerID,editarTaks,eliminarTaks}= require('../controllers/taks.controllers');
-const routes = require('express').Router();
+import {crearTaks,obtenerTaks,obtenerID,editarTaks,eliminarTaks} from '../controllers/taks.controllers';
+import {Router} from'express'
 
+const routes = Router()
 
 //obtener todas las tareas
 routes.get('/taks',obtenerTaks);

@@ -1,9 +1,8 @@
-const e = require('express');
-const {conectDB} = require('../db/database');
-const crtl ={};
+import express from'express';
+import {conectDB} from '../db/database';
 
 //obtener todas las tareas
-crtl.obtenerTaks = async ( req,res)=>{
+export const obtenerTaks = async ( req,res)=>{
     try{
         const conexion = await conectDB();
 
@@ -20,7 +19,7 @@ crtl.obtenerTaks = async ( req,res)=>{
     
 }
 //obtener tareas por id
-crtl.obtenerID = async ( req,res)=>{
+export const obtenerID = async ( req,res)=>{
     const conexion = await conectDB();
     try{
         const {id}= req.params;
@@ -39,7 +38,7 @@ crtl.obtenerID = async ( req,res)=>{
     
 }
 //crear tareas
-crtl.crearTaks = async ( req,res)=>{
+export const crearTaks = async ( req,res)=>{
     try{
         const { title,description,isComplete}= req.body;
         const conexion = await conectDB();
@@ -59,7 +58,7 @@ crtl.crearTaks = async ( req,res)=>{
   
 }
 //actualizar tarea
-crtl.editarTaks = async(req,res)=>{
+export const editarTaks = async(req,res)=>{
     const conexion = await conectDB();
     const {id} = req.params
     const { title,description,isComplete}= req.body;
@@ -82,7 +81,8 @@ crtl.editarTaks = async(req,res)=>{
     }
     
 }
-crtl.eliminarTaks = async(req,res)=>{
+export const eliminarTaks = async(req,res)=>{
+
     const conexion = await conectDB();
     const {id} = req.params;
     try{
@@ -96,4 +96,3 @@ crtl.eliminarTaks = async(req,res)=>{
         res.status(500).json({msg:'error interno del servidor'})
     }
 }
-module.exports= crtl;

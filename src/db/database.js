@@ -1,6 +1,6 @@
-const mysql = require('mysql2/promise');
+import mysql from('mysql2/promise');
 
-const conectDB = async ()=>{
+export const conectDB = async ()=>{
     try{
         return await mysql.createConnection({
             host:'localhost',
@@ -12,6 +12,4 @@ const conectDB = async ()=>{
     }catch(error){
 
     }
-   
 }
-module.exports ={conectDB}
