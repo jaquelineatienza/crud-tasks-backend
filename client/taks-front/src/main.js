@@ -123,8 +123,9 @@ const renderTasks = (task) => {
 
     await updaTasks(task.id, updatedTask).then((res) => {
       if (res) {
+        console.log(task.id);
         alert("Estado de la tarea actualizado correctamente");
-        updateTaskInDOM(task.id, updatedTask);
+        updateTaskInDOM(task.id, updaTasks);
       } else {
         alert("Ocurrió un error al intentar editar la tarea");
       }
