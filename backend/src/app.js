@@ -1,16 +1,17 @@
-import { express} from 'express';
-import {cors} from 'cors';
-import {morgan} from ' morgan';
-import {conectDB}  from './db/database'
+import  express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
+
 const app = express();
-import rutas from './routes/taks.routes'
+import {routes} from './routes/taks.routes.js'; 
+
 //middlewares
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(conectDB)
+
 //configuracion de las rutas
-app.use(rutas)
+app.use("/api/taks",routes)
 
 //configuracion del puerto
 const PORT = 3440;

@@ -1,4 +1,4 @@
-import mysql from('mysql2/promise');
+import mysql from 'mysql2/promise';
 
 export const conectDB = async ()=>{
     try{
@@ -8,7 +8,7 @@ export const conectDB = async ()=>{
             password:'',
             database:'tasks_db'
         })
-
+        console.log('la base de datos se conecto correctamente')
     }catch(error){
 
     }

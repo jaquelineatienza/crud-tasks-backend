@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+#conTasks {
+  max-height: 90vh;
+  overflow-y: auto;
+}
